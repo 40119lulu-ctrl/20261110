@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#9bdbf5">
+    <title>Kirby 的數學冒險</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#" aria-label="Kirby 的數學冒險首頁">
+          <span class="wordmark-star">✦</span>
+          <span>Kirby 的數學冒險</span>
+        </a>
+        <div class="hud" aria-live="polite">
+          <span class="hud-label">星星點數</span>
+          <strong id="score">0</strong>
+          <span class="hud-divider"></span>
+          <span class="hud-label">前進距離</span>
+          <strong id="distance">0</strong>
+          <span class="hud-unit">m</span>
+        </div>
+      </header>
+
+      <section class="game-wrap" aria-label="Kirby 數學冒險遊戲">
+        <div id="game-stage" class="game-stage">
+          <div class="stage-label"><span class="status-dot"></span><span id="status">準備出發</span></div>
+          <div id="quiz" class="quiz" hidden>
+            <div class="quiz-card">
+              <div class="quiz-kicker"><span>✦</span>小小數學挑戰</div>
+              <h1 id="question">3 + 5 = ?</h1>
+              <div id="answers" class="answers"></div>
+              <p id="quiz-feedback" class="quiz-feedback" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="mobile-controls" aria-label="觸控操作">
+            <div class="dpad" aria-label="方向鍵">
+              <button class="control-btn up" data-control="ArrowUp" aria-label="上">↑</button>
+              <button class="control-btn left" data-control="ArrowLeft" aria-label="左">←</button>
+              <button class="control-btn down" data-control="ArrowDown" aria-label="下">↓</button>
+              <button class="control-btn right" data-control="ArrowRight" aria-label="右">→</button>
+            </div>
+            <button class="attack-btn" data-control="attack" aria-label="發射蘋果"><span>✦</span><small>攻擊</small></button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="helpbar">
+        <span><kbd>←</kbd><kbd>→</kbd> 移動</span>
+        <span><kbd>↑</kbd> 跳躍，連按兩次飛行</span>
+        <span><kbd>←</kbd> 連按奔跑並攻擊</span>
+        <span class="help-mobile">方向鍵移動・✦ 攻擊</span>
+      </footer>
+    </main>
+    <script src="sketch.js"></script>
+  </body>
+</html>
